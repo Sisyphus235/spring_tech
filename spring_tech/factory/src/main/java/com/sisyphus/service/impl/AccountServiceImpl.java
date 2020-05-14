@@ -10,7 +10,7 @@ import com.sisyphus.service.IAccountService;
 public class AccountServiceImpl implements IAccountService {
 
 //    private IAccountDao accountDao = new AccountDaoImpl();//代码耦合
-    private IAccountDao accountDao = (IAccountDao)BeanFactory.getBean("accountDao"); //工厂模式反射创建解耦
+    private IAccountDao accountDao = (IAccountDao) BeanFactory.getBean("accountDao"); //工厂模式反射创建解耦
 
     public void saveAccount() {
         accountDao.saveAccount();
