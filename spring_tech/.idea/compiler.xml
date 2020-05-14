@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="factory" />
         <module name="jdbc" />
+        <module name="spring_ioc" />
       </profile>
     </annotationProcessing>
   </component>
