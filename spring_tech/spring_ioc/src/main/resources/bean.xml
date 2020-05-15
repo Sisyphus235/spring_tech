@@ -4,6 +4,56 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 对象创建交给 spring 管理 -->
-    <bean id="accountService" class="com.sisyphus.service.impl.AccountServiceImpl"></bean>
     <bean id="accountDao" class="com.sisyphus.dao.impl.AccountDaoImpl"></bean>
+    <bean id="time" class="java.util.Date"></bean>
+    <!--1.构造函数注入-->
+    <bean id="accountService" class="com.sisyphus.service.impl.AccountServiceImpl">
+        <constructor-arg name="name" value="lilei"></constructor-arg>
+        <constructor-arg name="age" value="11"></constructor-arg>
+        <constructor-arg name="birthday" ref="time"></constructor-arg>
+    </bean>
+    <!--2.set方法注入-->
+    <bean id="accountService2" class="com.sisyphus.service.impl.AccountServiceImpl2">
+        <property name="name" value="jim"></property>
+        <property name="age" value="12"></property>
+        <property name="birthday" ref="time"></property>
+    </bean>
+    <!--3.复杂类型注入-->
+    <bean id="accountService3" class="com.sisyphus.service.impl.AccountServiceImpl3">
+        <property name="myStrs">
+            <array>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </array>
+        </property>
+        <property name="myList">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="mySet">
+            <set>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </set>
+        </property>
+        <property name="myMap">
+            <map>
+                <entry key="a" value="1"></entry>
+                <entry key="b" value="2"></entry>
+                <entry key="c" value="3"></entry>
+            </map>
+        </property>
+        <property name="myProps">
+            <props>
+                <prop key="a">1</prop>
+                <prop key="b">2</prop>
+                <prop key="c">3</prop>
+            </props>
+        </property>
+    </bean>
 </beans>

@@ -10,20 +10,27 @@ import java.util.Date;
 /**
  * 账户的业务层实现
  */
-public class AccountServiceImpl implements IAccountService {
+public class AccountServiceImpl2 implements IAccountService {
 
     private String name;
     private Integer age;
-    private Date birthday;
 
-    public AccountServiceImpl(String name, Integer age, Date birthday) {
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
+    private Date birthday;
+
     public void saveAccount() {
-        System.out.println("AccountServiceImpl saveAccount 执行了" + ", " + name + ", " + age + ", " + birthday);
+        System.out.println("AccountServiceImpl2 saveAccount 执行了" + ", " + name + ", " + age + ", " + birthday);
         ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
         IAccountDao accountDao = ac.getBean("accountDao", IAccountDao.class);
         accountDao.saveAccount();
