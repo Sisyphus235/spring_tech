@@ -12,6 +12,7 @@
         <module>factory</module>
         <module>spring_ioc</module>
         <module>bean</module>
+        <module>spring_annotation_ioc</module>
     </modules>
     <packaging>pom</packaging>
 

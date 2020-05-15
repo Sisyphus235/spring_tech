@@ -9,6 +9,7 @@
         <module name="bean" />
         <module name="factory" />
         <module name="jdbc" />
+        <module name="spring_annotation_ioc" />
         <module name="spring_ioc" />
       </profile>
     </annotationProcessing>
