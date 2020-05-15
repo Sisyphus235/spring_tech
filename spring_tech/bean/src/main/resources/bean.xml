@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 对象创建交给 spring 管理 -->
+    <!-- 1.默认构造函数创建 bean -->
+    <bean id="accountService" class="com.sisyphus.service.impl.AccountServiceImpl" scope="singleton" init-method="init" destroy-method="destroy"></bean>
+    <!-- 2.使用某个类中的方法创建 bean -->
+    <!--<bean id="instanceFactory" class="com.sisyphus.factory.InstanceFactory"></bean>-->
+    <!--<bean id="accountService" factory-bean="instanceFactory" factory-method="getAccountService"></bean>-->
+    <!-- 3.使用某个类中的静态方法创建 bean -->
+    <!--<bean id="accountService"  class="com.sisyphus.factory.StaticFactory" factory-method="getAccountService"></bean>-->
+</beans>

@@ -11,6 +11,7 @@
         <module>jdbc</module>
         <module>factory</module>
         <module>spring_ioc</module>
+        <module>bean</module>
     </modules>
     <packaging>pom</packaging>
 
