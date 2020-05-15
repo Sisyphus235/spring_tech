@@ -11,6 +11,7 @@
         <module name="jdbc" />
         <module name="spring_annotation_ioc" />
         <module name="spring_ioc" />
+        <module name="spring_xml_ioc" />
       </profile>
     </annotationProcessing>
   </component>
