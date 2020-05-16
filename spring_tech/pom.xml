@@ -13,7 +13,8 @@
         <module>spring_ioc</module>
         <module>bean</module>
         <module>spring_annotation_ioc</module>
-        <module>spring_xml_ioc</module>
+        <module>account_xml_ioc</module>
+        <module>account_annotation_ioc</module>
     </modules>
     <packaging>pom</packaging>
 

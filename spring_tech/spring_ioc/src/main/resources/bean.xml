@@ -4,10 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 对象创建交给 spring 管理 -->
-    <bean id="accountDao" class="com.sisyphus.dao.impl.AccountDaoImpl"></bean>
+    <bean id="accountDao" class="com.AccountDaoImpl"></bean>
     <bean id="time" class="java.util.Date"></bean>
     <!--1.构造函数注入-->
-    <bean id="accountService" class="com.sisyphus.service.impl.AccountServiceImpl">
+    <bean id="accountService" class="com.AccountServiceImpl">
         <constructor-arg name="name" value="lilei"></constructor-arg>
         <constructor-arg name="age" value="11"></constructor-arg>
         <constructor-arg name="birthday" ref="time"></constructor-arg>

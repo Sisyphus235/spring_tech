@@ -2,10 +2,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="accountService" class="com.sisyphus.service.impl.AccountServiceImpl">
+    <bean id="accountService" class="com.AccountServiceImpl">
         <property name="accountDao" ref="accountDao"></property>
     </bean>
-    <bean id="accountDao" class="com.sisyphus.dao.impl.AccountDaoImpl">
+    <bean id="accountDao" class="com.AccountDaoImpl">
         <property name="runner" ref="runner"></property>
     </bean>
     <!--配置QueryRunner-->

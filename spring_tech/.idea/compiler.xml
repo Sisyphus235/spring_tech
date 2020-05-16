@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="account_annotation_ioc" />
+        <module name="account_xml_ioc" />
         <module name="bean" />
         <module name="factory" />
         <module name="jdbc" />
         <module name="spring_annotation_ioc" />
         <module name="spring_ioc" />
-        <module name="spring_xml_ioc" />
       </profile>
     </annotationProcessing>
   </component>
