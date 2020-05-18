@@ -23,6 +23,13 @@ public interface IAccountDao {
     Account findAccountById(Integer accountId);
 
     /**
+     * 根据名称查询账户
+     * @param name
+     * @return 唯一结果直接返回，无结果返回 null，多个结果报异常
+     */
+    Account findAccountByName(String name);
+
+    /**
      * 保存
      * @param account
      */

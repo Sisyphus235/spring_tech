@@ -72,4 +72,14 @@ public class AccountServiceTest {
         //执行方法
         as.deleteAccount(4);
     }
+
+    @Test
+    public void testTransfer() {
+        //获取容器
+        ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
+        //获取业务层对象
+        IAccountService as = ac.getBean("accountService", IAccountService.class);
+        //执行方法
+        as.transfer("aaa", "bbb", 100f);
+    }
 }
