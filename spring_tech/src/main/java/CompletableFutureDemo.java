@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.concurrent.*;
 
-public class CompletableFuture {
+public class CompletableFutureDemo {
     public static void main(String[] args) {
         //创建异步服务
         ExecutorService service = Executors.newFixedThreadPool(10);
@@ -17,6 +17,26 @@ public class CompletableFuture {
         } catch (ExecutionException ex) {
             ex.printStackTrace();
         }
+
+//       CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> {
+//           try{
+//               TimeUnit.SECONDS.sleep(10);
+//               return "success";
+//           } catch (Exception e) {
+//               e.printStackTrace();
+//               return "error";
+//           }
+//       });
+//
+//        try{
+//            System.out.println("done=" + completableFuture.isDone());
+//            TimeUnit.SECONDS.sleep(11);
+//            System.out.println("done=" + completableFuture.isDone());
+//            System.out.println("result=" + completableFuture.get());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
     }
 
     static class IntegerTask implements Callable<Integer> {

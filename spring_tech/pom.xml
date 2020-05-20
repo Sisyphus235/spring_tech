@@ -15,6 +15,8 @@
         <module>spring_annotation_ioc</module>
         <module>account_xml_ioc</module>
         <module>account_annotation_ioc</module>
+        <module>proxy</module>
+        <module>future</module>
     </modules>
     <packaging>pom</packaging>
 

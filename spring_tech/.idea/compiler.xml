@@ -10,7 +10,9 @@
         <module name="account_xml_ioc" />
         <module name="bean" />
         <module name="factory" />
+        <module name="future" />
         <module name="jdbc" />
+        <module name="proxy" />
         <module name="spring_annotation_ioc" />
         <module name="spring_ioc" />
       </profile>
