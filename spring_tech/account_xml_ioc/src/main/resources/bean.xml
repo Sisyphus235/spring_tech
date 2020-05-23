@@ -2,9 +2,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置代理 service-->
+    <bean id="proxyAccountService" factory-bean="beanFactory" factory-method="getAccountService"></bean>
+    <!--配置 beanFactory-->
+    <bean id="beanFactory" class="com.sisyphus.factory.BeanFactory">
+        <property name="accountService" ref="accountService"></property>
+        <property name="transactionManager" ref="transactionManager"></property>
+    </bean>
     <bean id="accountService" class="com.sisyphus.service.impl.AccountServiceImpl">
         <property name="accountDao" ref="accountDao"></property>
-        <property name="transactionManager" ref="transactionManager"></property>
     </bean>
     <bean id="accountDao" class="com.sisyphus.dao.impl.AccountDaoImpl">
         <property name="runner" ref="runner"></property>
