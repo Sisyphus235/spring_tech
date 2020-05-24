@@ -17,6 +17,7 @@
         <module>account_annotation_ioc</module>
         <module>proxy</module>
         <module>future</module>
+        <module>spring_boot_demo</module>
     </modules>
     <packaging>pom</packaging>
 
