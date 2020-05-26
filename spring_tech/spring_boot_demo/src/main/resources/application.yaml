@@ -1,6 +1,6 @@
 person:
-  name: john
-  age: 18
+  name: john${random.uuid}
+  age: ${random.int}
   married: false
   birth: 2002/10/12
   resume:
