@@ -1,0 +1,11 @@
+person:
+  name: john
+  age: 18
+  married: false
+  birth: 2002/10/12
+  resume:
+    junior: 北大附
+    senior: 人大附
+  hobbies:
+    - basketball
+    - table tennis
