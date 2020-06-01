@@ -18,6 +18,7 @@
         <module>proxy</module>
         <module>future</module>
         <module>spring_boot_demo</module>
+        <module>aop</module>
     </modules>
     <packaging>pom</packaging>
 

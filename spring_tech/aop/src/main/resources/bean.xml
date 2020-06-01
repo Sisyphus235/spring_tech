@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--配置 spring IOC，把 service 对象配置进来-->
+    <bean id="accountService" class="com.sisyphus.service.impl.AccountServiceImpl"></bean>
+
+    <!--spring 中基于 XML 的 AOP 配置步骤-->
+    <!--配置 Logger 类-->
+    <bean id="logger" class="com.sisyphus.utils.Logger"></bean>
+    <!--配置 AOP-->
+    <aop:config>
+        <!--配置切面-->
+        <aop:aspect id="logAdvice" ref="logger">
+            <!--
+            切入点表达式写法：
+                关键字：execution（表达式）
+                表达式：
+                    访问修饰符 返回值 包名.包名.包名...类名.方法名（参数列表）
+                标准写法：
+                    public void com.sisyphus.service.impl.AccountServiceImpl.saveAccount()
+            -->
+            <!--配置通知的类型，并且建立通知方法和切入点方法的关联-->
+            <aop:before method="printLog" pointcut="execution(public void com.sisyphus.service.impl.AccountServiceImpl.saveAccount())"></aop:before>
+        </aop:aspect>
+    </aop:config>
+</beans>

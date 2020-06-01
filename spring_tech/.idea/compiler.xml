@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="account_annotation_ioc" />
         <module name="account_xml_ioc" />
+        <module name="aop" />
         <module name="bean" />
         <module name="factory" />
         <module name="future" />
@@ -16,6 +17,7 @@
         <module name="spring_annotation_ioc" />
         <module name="spring_boot_demo" />
         <module name="spring_ioc" />
+        <module name="spring_xml_ioc" />
       </profile>
     </annotationProcessing>
   </component>
