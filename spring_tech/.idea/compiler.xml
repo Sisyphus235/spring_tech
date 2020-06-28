@@ -18,7 +18,11 @@
         <module name="spring_boot_demo" />
         <module name="spring_ioc" />
         <module name="spring_xml_ioc" />
+        <module name="volatile" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="volatile" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

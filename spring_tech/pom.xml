@@ -19,6 +19,8 @@
         <module>future</module>
         <module>spring_boot_demo</module>
         <module>aop</module>
+        <module>volatile</module>
+        <module>volatile</module>
     </modules>
     <packaging>pom</packaging>
 
