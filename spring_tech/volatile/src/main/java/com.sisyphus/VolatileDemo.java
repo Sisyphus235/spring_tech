@@ -8,10 +8,31 @@ class TestData {
     public void addConstant() {
         this.number = 60;
     }
+
+    public void autoAdd() {
+        number++;
+    }
 }
 
 public class VolatileDemo {
     public static void main(String[] args) {
+        TestData testData = new TestData();
+        for (int i = 0; i < 20; i++) {
+            new Thread(() -> {
+                for (int j = 0; j < 1000; j++) {
+                    testData.autoAdd();
+                }
+            }, String.valueOf(i)).start();
+        }
+        //默认 2 个线程，一个是 main，另一个是 gc，大于 2 说明上面的线程还有在运行中的
+        while (Thread.activeCount() > 2) {
+            Thread.yield();
+        }
+        //如果 volatile 保证原子性，则 number 是 20000，但是 volatile 不保证原子性，所以这个值大概率不等于 20000
+        System.out.println(Thread.currentThread().getName() + "\t finally number is " + testData.number);
+    }
+
+    public static void testVisibility() {
         TestData testData = new TestData();
 
         /**
