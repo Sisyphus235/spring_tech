@@ -1,6 +1,7 @@
 package com.sisyphus;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 class TestData {
     volatile int number = 0;
@@ -12,15 +13,27 @@ class TestData {
     public void autoAdd() {
         number++;
     }
+
+    AtomicInteger atomicInteger = new AtomicInteger(0);
+
+    public void atomicAdd() {
+        atomicInteger.getAndIncrement();
+    }
 }
 
 public class VolatileDemo {
     public static void main(String[] args) {
+        testVisibility();
+        testAtomic();
+    }
+
+    public static void testAtomic() {
         TestData testData = new TestData();
         for (int i = 0; i < 20; i++) {
             new Thread(() -> {
                 for (int j = 0; j < 1000; j++) {
                     testData.autoAdd();
+                    testData.atomicAdd();
                 }
             }, String.valueOf(i)).start();
         }
@@ -30,6 +43,8 @@ public class VolatileDemo {
         }
         //如果 volatile 保证原子性，则 number 是 20000，但是 volatile 不保证原子性，所以这个值大概率不等于 20000
         System.out.println(Thread.currentThread().getName() + "\t finally number is " + testData.number);
+        System.out.println(Thread.currentThread().getName() + "\t atomic finally number is " + testData.atomicInteger);
+
     }
 
     public static void testVisibility() {
