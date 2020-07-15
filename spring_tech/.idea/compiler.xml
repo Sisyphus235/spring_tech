@@ -10,6 +10,7 @@
         <module name="account_xml_ioc" />
         <module name="aop" />
         <module name="bean" />
+        <module name="concurrency" />
         <module name="factory" />
         <module name="future" />
         <module name="jdbc" />
@@ -18,11 +19,7 @@
         <module name="spring_boot_demo" />
         <module name="spring_ioc" />
         <module name="spring_xml_ioc" />
-        <module name="volatile" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="volatile" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
