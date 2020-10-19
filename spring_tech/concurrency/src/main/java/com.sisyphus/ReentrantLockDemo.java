@@ -68,7 +68,7 @@ public class ReentrantLockDemo {
 
         System.out.println();
 
-        // reentrantLock demog
+        // reentrantLock demo
         Thread t3 = new Thread(phone, "t3");
         Thread t4 = new Thread(phone, "t4");
         t3.start();

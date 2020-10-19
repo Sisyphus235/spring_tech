@@ -34,12 +34,6 @@ public class SpinLockDemo {
             spinLockDemo.myUnlock();
         }, "A").start();
 
-//        try {
-//            TimeUnit.SECONDS.sleep(1);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
         new Thread(() -> {
             spinLockDemo.myLock();
             try {

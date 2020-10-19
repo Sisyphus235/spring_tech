@@ -33,6 +33,7 @@
         <module>aop</module>
         <module>volatile</module>
         <module>volatile</module>
+        <module>design_pattern</module>
     </modules>
     <packaging>pom</packaging>
 
